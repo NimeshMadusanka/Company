@@ -1,0 +1,65 @@
+@font-face {
+    font-family: poppins;
+    src: url(../fonts/Poppins-Medium.ttf);
+}
+
+.registerBox{
+    font-size: 1vw;
+    font-family: poppins;
+    width: 35vw;
+    hight: auto;
+    padding: 1vw;
+    margin: 2vw;
+    box-sizing: border-box;
+    border:0.18vw solid #ff0000;
+    border-radius: 1.3vw;
+}
+.textBox {
+    background: transparent;
+    outline: none;
+    font-size: 0.8vw;
+    border-color: gray;
+    border-radius: 3vw;
+    border-style: solid;
+    border-width: 0.06510416666666667vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    height: 1.7vw;
+    width: 20vw;
+}
+
+.textBox:focus {
+    background: transparent;
+    outline: none;
+    font-size: 0.8vw;
+    border-color: #ff0000;
+    border-radius: 3vw;
+    border-style: solid;
+    border-width: 0.08510416666666667vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    height: 1.7vw;
+    width: 20vw;
+}
+
+.button {
+    background: transparent;
+    outline: none;
+    font-size: 0.8vw;
+    border-color: gray;
+    border-radius: 3vw;
+    border-style: solid;
+    border-width: 0.06510416666666667vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    height: 1.7vw;
+}
+
+.button:hover {
+    background-color: #ff0000;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0.06510416666666667vw 0.06510416666666667vw 0.06510416666666667vw rgba(0, 0, 0, 0.2);
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+}
