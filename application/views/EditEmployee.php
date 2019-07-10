@@ -83,24 +83,6 @@
 </html>
 <script>
 
-    window.onload = function(e){
-        var x="<?php if(isset($_SESSION['success'])){ echo $_SESSION['success'];}?>";
-        if("1"==x){
-            swal("Successful!", "Registration Successful!", "success");
-            <?php $this->session->set_flashdata("success",null); ?>
-        }
-
-        var y="<?php if(isset($_SESSION['error'])){ echo $_SESSION['error'];}?>";
-
-        if("1"==y){
-            showErrorMsg("This NIC Number Already Exists !");
-            <?php $this->session->set_flashdata("error",null); ?>
-        }
-    }
-
-</script>
-<script>
-
     function checkForm(form) {
 
         if (document.getElementById("css").checked||document.getElementById("html").checked||document.getElementById("javascript").checked){
@@ -126,11 +108,11 @@
         re = /[0-9]{10}$/;
         if(!re.test(phone)) {
             swal({
-                title: "Error",
+                title: "Error",g
                 text: "Your Entered Wrong Phone Number",
                 icon: "warning",
                 dangerMode: true,
-            });
+        });
             return false;
         }
 

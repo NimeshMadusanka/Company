@@ -59,8 +59,50 @@ class CompanyController extends CI_Controller{
 
     public function edit_empoyee(){
 
-        $data['emp'] = $this->CompanyModel->getData($_POST['change_id']);
+        if (isset($_POST['change_id'])||isset($_POST['id'])) {
 
-        $this->load->view('EditEmployee',$data);
+            if (isset($_POST['id'])) {
+
+                $id = $_POST['id'];
+                $name = $_POST['name'];
+                $gender = $_POST['gender'];
+                $relationship = $_POST['relationship'];
+                $address = $_POST['address'];
+                $phone = $_POST['phone'];
+
+                if (isset($_POST['html'])) {
+                    $html = 1;
+                } else {
+                    $html = 0;
+                }
+
+                if (isset($_POST['css'])) {
+                    $css = 1;
+                } else {
+                    $css = 0;
+                }
+
+                if (isset($_POST['javascript'])) {
+                    $javascript = 1;
+                } else {
+                    $javascript = 0;
+                }
+
+                if (isset($_POST['php'])) {
+                    $php = 1;
+                } else {
+                    $php = 0;
+                }
+
+                $this->CompanyModel->edit_emp($id, $name, $gender, $relationship, $address, $html, $css, $javascript, $php, $phone);
+
+                redirect('CompanyController/EmployeeList');
+
+            }
+
+            $data['emp'] = $this->CompanyModel->getData($_POST['change_id']);
+
+            $this->load->view('EditEmployee', $data);
+        }
     }
 }

@@ -56,4 +56,28 @@ class CompanyModel extends CI_Model{
 
     }
 
+    public function edit_emp($id,$name,$gender,$relationship,$address,$html,$css,$javascript,$php,$phone){
+
+        $data = array(
+
+            'id'=>$id,
+            'name'=>$name,
+            'gender'=>$gender,
+            'relationship'=>$relationship,
+            'address'=>$address,
+            'html'=>$html,
+            'css'=>$css,
+            'javascript'=>$javascript,
+            'php'=>$php,
+            'phone'=>$phone
+
+        );
+
+        $this->db->where(array('id'=> $id));
+        $this->db->set($data);
+        $this->db->update('employee');
+
+        $this->session->set_flashdata("success", "1");
+
+    }
 }
