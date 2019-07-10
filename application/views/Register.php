@@ -5,6 +5,8 @@
    <!-- <link rel="stylesheet" href="<?php /*echo base_url(); */?>/public/css/styles.css">-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="<?php echo base_url(); ?>/public/js/sweetalert.min.js"></script>
+    <script src="<?php echo base_url(); ?>/public/js/validation.js"></script>
 
     <title>Register</title>
 </head>
@@ -33,21 +35,21 @@
 
     <div class="bg-white" style="margin: 3%; margin-right: 5%; margin-top: 1%">
         <h3>Employee Register Form</h3>
-        <form action="register" method="post" class="was-validated" >
+        <form action="register" method="post" class="was-validated" onsubmit="return checkForm()" >
             <div class="form-group">
                 <label for="name">Employee Name :</label>
                 <input type="text" class="form-control" name="name" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
             </div>
             <div class="form-group">
-                <label for="address">Address :</label>
-                <textarea class="form-control" name="address" required></textarea>
-            </div>
-            <div class="form-group">
-                <label for="gender">Gender :</label>
-                <div class="checkbox">
-                    <label><input type="radio" class="form-control" name="gender" value="Male" required>Male</label>
-                    <label><input type="radio" class="form-control" name="gender" value="Female" required>Female</label>
-                </div>
+                <label for="gender">Gender :&emsp;</label>
+
+                <label><input type="radio" class=" radio-inline" name="gender" value="Male" required >Male</label>
+                <label><input type="radio" class="radio-inline" name="gender" value="Female" required>Female</label>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+
             </div>
             <div class="form-group">
                 <label for="relationship">Relationship Status :</label>
@@ -55,23 +57,37 @@
                     <option value="">Select Relationship State</option>
                     <option value="Single" >Single</option>
                     <option value="Married" >Married</option>
+                    <div class="valid-feedback">Valid.</div>
+                    <div class="invalid-feedback">Please fill out this field.</div>
                 </select>
             </div>
             <div class="form-group">
-                <label for="skills">Skills</label>
-                <div class="checkbox">
-                    <label><input type="checkbox" name="css" id="css">CSS</label>
-                </div>
+                <label for="address">Address :</label>
+                <textarea class="form-control" name="address" required></textarea>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="skills">Skills :</label>
                 <div class="checkbox">
                     <label><input type="checkbox" name="html" id="html">HTML</label>
                 </div>
                 <div class="checkbox">
-                    <label><input type="checkbox" name="javascript" id="javascript">Javascript</label>
+                    <label><input type="checkbox" name="css" id="css">CSS</label>
+                </div>
+                <div class="checkbox">
+                    <label><input type="checkbox" name="javascript" id="javascript">JAVASCRIPT</label>
+                </div>
+                <div class="checkbox">
+                    <label><input type="checkbox" name="php" id="php">PHP</label>
                 </div>
             </div>
             <div class="form-group">
-                <label for="phone">Phone</label>
+                <label for="phone">Phone :</label>
                 <input type="tel" pattern="[0-9]{10}" class="form-control" name="phone" id="phone" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
             </div>
             <input type="submit" class="btn btn-success">
     </div>
