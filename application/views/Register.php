@@ -13,7 +13,7 @@
 <body>
 <div class="container">
     <!-- navigation bar -->
-    <nav class="navbar navbar-expand-sm bg-light navbar-light" style="color: #eeeeee">
+    <nav style="color: gainsboro" class="navbar navbar-expand-sm bg-light navbar-light" >
 
         <i class="fa fa-book" style="font-size:48px;color:green; margin-right: 10px"></i>
 
@@ -33,8 +33,10 @@
         </ul>
     </nav>
 
-    <div class="bg-white" style="margin: 3%; margin-right: 5%; margin-top: 1%">
-        <h3>Employee Register Form</h3>
+    <div class="bg-light" style=" margin: 30%; margin-right: 30%; margin-top: 1%">
+
+        <h4 style="color: #00CC00">&emsp;&emsp;&emsp;Employee Register Form</h4>
+
         <form action="register" method="post" class="was-validated" onsubmit="return checkForm()" >
             <div class="form-group">
                 <label for="name">Employee Name :</label>
@@ -42,6 +44,7 @@
                 <div class="valid-feedback">Valid.</div>
                 <div class="invalid-feedback">Please fill out this field.</div>
             </div>
+
             <div class="form-group">
                 <label for="gender">Gender :&emsp;</label>
 
@@ -51,6 +54,7 @@
                 <div class="invalid-feedback">Please fill out this field.</div>
 
             </div>
+
             <div class="form-group">
                 <label for="relationship">Relationship Status :</label>
                 <select name="relationship" class="browser-default custom-select" required>
@@ -61,6 +65,7 @@
                     <div class="invalid-feedback">Please fill out this field.</div>
                 </select>
             </div>
+
             <div class="form-group">
                 <label for="address">Address :</label>
                 <textarea class="form-control" name="address" required></textarea>
@@ -71,28 +76,42 @@
             <div class="form-group">
                 <label for="skills">Skills :</label>
                 <div class="checkbox">
-                    <label><input type="checkbox" name="html" id="html">HTML</label>
-                </div>
-                <div class="checkbox">
+                    <label &emsp;><input type="checkbox" name="html" id="html">HTML</label>
                     <label><input type="checkbox" name="css" id="css">CSS</label>
-                </div>
-                <div class="checkbox">
                     <label><input type="checkbox" name="javascript" id="javascript">JAVASCRIPT</label>
-                </div>
-                <div class="checkbox">
                     <label><input type="checkbox" name="php" id="php">PHP</label>
                 </div>
             </div>
+
             <div class="form-group">
                 <label for="phone">Phone :</label>
                 <input type="tel" pattern="[0-9]{10}" class="form-control" name="phone" id="phone" required>
                 <div class="valid-feedback">Valid.</div>
                 <div class="invalid-feedback">Please fill out this field.</div>
             </div>
-            <input type="submit" class="btn btn-success">
+            <input style="margin-left: 10%" type="submit" class="btn btn-success">
     </div>
+
     </form>
 </div>
 
 </body>
 </html>
+<script>
+
+    window.onload = function(e){
+        var x="<?php if(isset($_SESSION['success'])){ echo $_SESSION['success'];}?>";
+        if("1"==x){
+            swal("Successful!", "Registration Successful!", "success");
+            <?php $this->session->set_flashdata("success",null); ?>
+        }
+
+        var y="<?php if(isset($_SESSION['error'])){ echo $_SESSION['error'];}?>";
+
+        if("1"==y){
+            showErrorMsg("This NIC Number Already Exists !");
+            <?php $this->session->set_flashdata("error",null); ?>
+        }
+    }
+
+</script>

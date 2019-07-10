@@ -3,6 +3,9 @@
     src: url(../fonts/Poppins-Medium.ttf);
 }
 
+body {
+    background:#bee5eb;
+}
 .registerBox{
     font-size: 1vw;
     font-family: poppins;
