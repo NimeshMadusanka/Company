@@ -56,4 +56,11 @@ class CompanyController extends CI_Controller{
 
         $this->load->view('EmployeeList',$data);
     }
+
+    public function edit_empoyee(){
+
+        $data['emp'] = $this->CompanyModel->getData($_POST['change_id']);
+
+        $this->load->view('EditEmployee',$data);
+    }
 }

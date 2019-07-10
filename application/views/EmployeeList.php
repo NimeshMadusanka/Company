@@ -99,7 +99,7 @@
 </div>
 
 <div style="display: none;">
-    <form action="" method="post" id="change_form">
+    <form action="edit_empoyee" method="post" id="change_form">
         <input type="text" name="change_id" id="change_id">
     </form>
 </div>

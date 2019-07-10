@@ -45,4 +45,15 @@ class CompanyModel extends CI_Model{
 
     }
 
+    public function getData($id){
+
+        $this->db->select('*');
+        $this->db->from('employee');
+        $this->db->where('id',$id);
+        $query = $this->db->get();
+
+        return $query->result();
+
+    }
+
 }
