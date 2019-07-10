@@ -17,18 +17,18 @@
 
         <i class="fa fa-book" style="font-size:48px;color:green; margin-right: 10px"></i>
 
-        <a class="navbar-brand .text-success" href="#">Telexar</a>
+        <a class="navbar-brand .text-success" href="">Telexar</a>
 
 
 
         <!-- Navigation Links -->
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="#">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<i class="fa fa-sign-in" style="color: green"></i> Register</a>
+                <a class="nav-link" href="">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<i class="fa fa-sign-in" style="color: green"></i> Register</a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fa fa-folder-open" style="color: green"></i> Employee</a>
+                <a class="nav-link" href="EmployeeList"><i class="fa fa-folder-open" style="color: green"></i> Employee</a>
             </li>
         </ul>
     </nav>

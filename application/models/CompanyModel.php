@@ -26,4 +26,23 @@ class CompanyModel extends CI_Model{
     }
 
 
+    public function getEmployees(){
+
+        $this->db->select('*');
+        $this->db->from('employee');
+        $query = $this->db->get();
+
+        return $query->result();
+
+    }
+
+    public function delete($id){
+
+        $this->db->where('id',$id);
+        $this->db->delete('employee');
+
+        $this->session->set_flashdata("success", "2");
+
+    }
+
 }

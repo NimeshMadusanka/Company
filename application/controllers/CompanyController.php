@@ -46,4 +46,14 @@ class CompanyController extends CI_Controller{
 
         $this->load->view('Register');
     }
+
+    public function EmployeeList(){
+        if (isset($_POST['delete_id'])){
+            $this->CompanyModel->delete($_POST['delete_id']);
+        }
+
+        $data['emp'] = $this->CompanyModel->getEmployees();
+
+        $this->load->view('EmployeeList',$data);
+    }
 }
