@@ -12,13 +12,14 @@
 </head>
 <body>
 <div class="container">
-    <div class="bg-light" style=" margin: 30%; margin-right: 30%; margin-top: 1%">
+    <div class="bg-light"
+         style=" margin: 15%; margin-right: 15%; margin-top: 2%;box-shadow: 0 0.4629629629629629vh 0.5208333333333334vw 0 rgba(0,0,0,0.3);">
 
-        <h4 style="color: #00CC00">&emsp;&emsp;&emsp;Employee Register Form</h4>
+        <h4 style="color: #00CC00; margin-left: 30%">EMPLOYEE REGISTER FORM</h4>
 
-        <form action="edit_empoyee" method="post" class="was-validated" onsubmit="return checkForm()" >
+        <form style="margin: 20%; margin-top: 1% " action="edit_empoyee" method="post" class="was-validated" onsubmit="return checkForm()" >
             <div class="form-group">
-                <label for="id">ID</label>
+                <label for="id">ID :</label>
                 <input type="text" class="form-control" name="id" value="<?php foreach ($emp as $row){ echo $row->id;} ?>" readonly>
             </div>
 

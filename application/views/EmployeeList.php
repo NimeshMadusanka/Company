@@ -4,7 +4,7 @@
     <title>EmployeeList</title>
 
     <link rel="stylesheet" href="<?php echo base_url(); ?>/public/css/bootstrap.css">
-    <!-- <link rel="stylesheet" href="<?php /*echo base_url(); */?>/public/css/styles.css">-->
+    <!-- <link rel="stylesheet" href="<?php /*echo base_url(); */ ?>/public/css/styles.css">-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="<?php echo base_url(); ?>/public/js/sweetalert.min.js"></script>
@@ -15,18 +15,19 @@
 
 <div class="container">
     <!-- navigation bar -->
-    <nav style="color: gainsboro" class="navbar navbar-expand-sm bg-light navbar-light" >
+    <nav style="box-shadow: 0 0.4629629629629629vh 0.5208333333333334vw 0 rgba(0,0,0,0.3);"
+         class="navbar navbar-expand-sm bg-light navbar-light">
 
         <i class="fa fa-book" style="font-size:48px;color:green; margin-right: 10px"></i>
 
         <a class="navbar-brand .text-success" href="Register">Telexar</a>
 
 
-
         <!-- Navigation Links -->
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="Register">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<i class="fa fa-sign-in" style="color: green"></i> Register</a>
+                <a class="nav-link" href="Register">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<i
+                            class="fa fa-sign-in" style="color: green"></i> Register</a>
             </li>
 
             <li class="nav-item">
@@ -36,7 +37,8 @@
     </nav>
 
     <div>
-        <table class="table table-striped">
+        <table style="box-shadow: 0 0.4629629629629629vh 0.5208333333333334vw 0 rgba(0,0,0,0.3); margin: 0.01%"
+               class="table table-striped">
             <thead>
             <tr>
                 <th>ID</th>
@@ -46,7 +48,7 @@
                 <th>Address</th>
                 <th>HTML</th>
                 <th>CSS</th>
-                <th>Javascript</th>
+                <th>JAVASCRIPT</th>
                 <th>PHP</th>
                 <th>Phone</th>
                 <th>EDIT</th>
@@ -54,43 +56,43 @@
             </tr>
             </thead>
             <tbody>
-            <?php foreach($emp as $row){
+            <?php foreach ($emp as $row) {
                 echo '
                             <tr>
-                                <th scope="row">'.$row->id.'</th>
-                                <td>'.$row->name.'</td>
-                                <td>'.$row->gender.'</td>
-                                <td>'.$row->relationship.'</td>
-                                <td>'.$row->address.'</td>';
+                                <th scope="row">' . $row->id . '</th>
+                                <td>' . $row->name . '</td>
+                                <td>' . $row->gender . '</td>
+                                <td>' . $row->relationship . '</td>
+                                <td>' . $row->address . '</td>';
 
-                if ($row->css==1){
-                    echo '<td>&#10003;</td>';
-                }else{
+                if ($row->html == 1) {
+                    echo '<td>&emsp;&#10003;</td>';
+                } else {
+                    echo '<td>&emsp;&#10007;</td>';
+                }
+
+                if ($row->css == 1) {
+                    echo '<td>&emsp;&#10003;</td>';
+                } else {
                     echo '<td>&#10007;</td>';
                 }
 
-                if ($row->html==1){
+                if ($row->javascript == 1) {
+                    echo '<td>&emsp;&emsp;&#10003;</td>';
+                } else {
+                    echo '<td>&emsp;&emsp;&#10007;</td>';
+                }
+                if ($row->php == 1) {
                     echo '<td>&#10003;</td>';
-                }else{
+                } else {
                     echo '<td>&#10007;</td>';
                 }
 
-                if ($row->javascript==1){
-                    echo '<td>&#10003;</td>';
-                }else{
-                    echo '<td>&#10007;</td>';
-                }
-                if ($row->php==1){
-                    echo '<td>&#10003;</td>';
-                }else{
-                    echo '<td>&#10007;</td>';
-                }
+                echo '<td>' . $row->phone . '</td>
 
-                echo '<td>'.$row->phone.'</td>
-
-                            <td><input type="button" class="btn btn-outline-success" id="'.$row->id.'" value="Edit" onclick="changeRow(this)"></td>
-                            <td><input type="button" class="btn btn-outline-danger" id="'.$row->id.'" value="Delete" onclick="deleteRow(this)"></td>';
-            }?>
+                            <td><input type="button" class="btn btn-outline-success" id="' . $row->id . '" value="Edit" onclick="changeRow(this)"></td>
+                            <td><input type="button" class="btn btn-outline-danger" id="' . $row->id . '" value="Delete" onclick="deleteRow(this)"></td>';
+            } ?>
 
             </tbody>
         </table>
@@ -148,21 +150,25 @@
 </script>
 <script>
 
-    window.onload = function(e){
-        var x="<?php if(isset($_SESSION['success'])){ echo $_SESSION['success'];}?>";
-        if("1"==x){
+    window.onload = function (e) {
+        var x = "<?php if (isset($_SESSION['success'])) {
+            echo $_SESSION['success'];
+        }?>";
+        if ("1" == x) {
             swal("Successful!", "Edit Successful!", "success");
-            <?php $this->session->set_flashdata("success",null); ?>
-        }else if("2"==x){
+            <?php $this->session->set_flashdata("success", null); ?>
+        } else if ("2" == x) {
             swal("Successful!", "Delete Successful!", "success");
-            <?php $this->session->set_flashdata("success",null); ?>
+            <?php $this->session->set_flashdata("success", null); ?>
         }
 
-        var y="<?php if(isset($_SESSION['error'])){ echo $_SESSION['error'];}?>";
+        var y = "<?php if (isset($_SESSION['error'])) {
+            echo $_SESSION['error'];
+        }?>";
 
-        if("1"==y){
+        if ("1" == y) {
             showErrorMsg("This NIC Number Already Exists !");
-            <?php $this->session->set_flashdata("error",null); ?>
+            <?php $this->session->set_flashdata("error", null); ?>
         }
     }
 

@@ -1,32 +1,35 @@
 <?php
 
-class CompanyModel extends CI_Model{
+class CompanyModel extends CI_Model
+{
 
     /*employee data insert function */
-    public function register_employee($name,$gender,$relationship,$address,$html,$css,$javascript,$php,$phone){
+    public function register_employee($name, $gender, $relationship, $address, $html, $css, $javascript, $php, $phone)
+    {
 
         $data = array(
 
-            'name'=>$name,
-            'gender'=>$gender,
-            'relationship'=>$relationship,
-            'address'=>$address,
-            'html'=>$html,
-            'css'=>$css,
-            'javascript'=>$javascript,
-            'php'=>$php,
-            'phone'=>$phone
+            'name' => $name,
+            'gender' => $gender,
+            'relationship' => $relationship,
+            'address' => $address,
+            'html' => $html,
+            'css' => $css,
+            'javascript' => $javascript,
+            'php' => $php,
+            'phone' => $phone
 
         );
 
-        $this->db->insert('employee',$data);
+        $this->db->insert('employee', $data);
 
         $this->session->set_flashdata("success", "1");
 
     }
 
 
-    public function getEmployees(){
+    public function getEmployees()
+    {
 
         $this->db->select('*');
         $this->db->from('employee');
@@ -36,44 +39,47 @@ class CompanyModel extends CI_Model{
 
     }
 
-    public function delete($id){
+    public function delete($id)
+    {
 
-        $this->db->where('id',$id);
+        $this->db->where('id', $id);
         $this->db->delete('employee');
 
         $this->session->set_flashdata("success", "2");
 
     }
 
-    public function getData($id){
+    public function getData($id)
+    {
 
         $this->db->select('*');
         $this->db->from('employee');
-        $this->db->where('id',$id);
+        $this->db->where('id', $id);
         $query = $this->db->get();
 
         return $query->result();
 
     }
 
-    public function edit_emp($id,$name,$gender,$relationship,$address,$html,$css,$javascript,$php,$phone){
+    public function edit_emp($id, $name, $gender, $relationship, $address, $html, $css, $javascript, $php, $phone)
+    {
 
         $data = array(
 
-            'id'=>$id,
-            'name'=>$name,
-            'gender'=>$gender,
-            'relationship'=>$relationship,
-            'address'=>$address,
-            'html'=>$html,
-            'css'=>$css,
-            'javascript'=>$javascript,
-            'php'=>$php,
-            'phone'=>$phone
+            'id' => $id,
+            'name' => $name,
+            'gender' => $gender,
+            'relationship' => $relationship,
+            'address' => $address,
+            'html' => $html,
+            'css' => $css,
+            'javascript' => $javascript,
+            'php' => $php,
+            'phone' => $phone
 
         );
 
-        $this->db->where(array('id'=> $id));
+        $this->db->where(array('id' => $id));
         $this->db->set($data);
         $this->db->update('employee');
 
