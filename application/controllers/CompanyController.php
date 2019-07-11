@@ -3,12 +3,14 @@
 class CompanyController extends CI_Controller
 {
 
+    /*constructor function */
     public function __construct()
     {
         parent::__construct();
         $this->load->model('CompanyModel');
     }
 
+    /*insert controller function*/
     public function Register()
     {
 
@@ -50,6 +52,7 @@ class CompanyController extends CI_Controller
         $this->load->view('Register');
     }
 
+    /*List view controller function */
     public function EmployeeList()
     {
         if (isset($_POST['delete_id'])) {
@@ -61,6 +64,7 @@ class CompanyController extends CI_Controller
         $this->load->view('EmployeeList', $data);
     }
 
+    /*Edit controller function */
     public function edit_empoyee()
     {
 

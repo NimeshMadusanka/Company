@@ -27,7 +27,7 @@ class CompanyModel extends CI_Model
 
     }
 
-
+    /* function of get Employee data*/
     public function getEmployees()
     {
 
@@ -39,6 +39,7 @@ class CompanyModel extends CI_Model
 
     }
 
+    /*function of delete employee details*/
     public function delete($id)
     {
 
@@ -49,6 +50,7 @@ class CompanyModel extends CI_Model
 
     }
 
+    /*function of retrieve employee data */
     public function getData($id)
     {
 
@@ -61,6 +63,7 @@ class CompanyModel extends CI_Model
 
     }
 
+    /*edit function */
     public function edit_emp($id, $name, $gender, $relationship, $address, $html, $css, $javascript, $php, $phone)
     {
 

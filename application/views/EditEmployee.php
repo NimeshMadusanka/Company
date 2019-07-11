@@ -8,7 +8,7 @@
     <script src="<?php echo base_url(); ?>/public/js/sweetalert.min.js"></script>
     <script src="<?php echo base_url(); ?>/public/js/validation.js"></script>
 
-    <title>Register</title>
+    <title>EditEmployee</title>
 </head>
 <body>
 <div class="container">
@@ -74,7 +74,7 @@
                 <div class="valid-feedback">Valid.</div>
                 <div class="invalid-feedback">Please fill out this field.</div>
             </div>
-            <input style="margin-left: 10%" type="submit" value="Edit Details" class="btn btn-success">
+            <input style="margin-left: 35%" type="submit" value="Edit Details" class="btn btn-success">
     </div>
 
     </form>
@@ -84,6 +84,7 @@
 </html>
 <script>
 
+    /*check wthere one checkbox is checked*/
     function checkForm(form) {
 
         if (document.getElementById("css").checked||document.getElementById("html").checked||document.getElementById("javascript").checked){
@@ -102,6 +103,7 @@
         return phoneCheck(form);
     }
 
+    /*validate phone number*/
     function phoneCheck(form) {
 
         var phone = document.getElementById("phone").value;
