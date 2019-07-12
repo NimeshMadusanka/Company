@@ -7,6 +7,7 @@
     <!-- <link rel="stylesheet" href="<?php /*echo base_url(); */ ?>/public/css/styles.css">-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <script src="<?php echo base_url(); ?>/public/js/sweetalert.min.js"></script>
     <script src="<?php echo base_url(); ?>/public/js/validation.js"></script>
 
@@ -15,10 +16,7 @@
 
 <div class="container">
     <!-- navigation bar -->
-    <nav style="box-shadow: 0 0.4629629629629629vh 0.5208333333333334vw 0 rgba(0,0,0,0.3);"
-         class="navbar navbar-expand-sm bg-light navbar-light">
-
-        <i class="fa fa-book" style="font-size:48px;color:green; margin-right: 10px"></i>
+    <nav style="box-shadow: 0 0.4629629629629629vh 0.5208333333333334vw 0 rgba(0,0,0,0.3);" class="navbar navbar-expand-sm bg-light navbar-light"><i class="fa fa-book" style="font-size:48px;color:green; margin-right: 10px"></i>
 
         <a class="navbar-brand .text-success" href="Register">Telexar</a>
 
@@ -31,7 +29,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href=""><i class="fa fa-folder-open" style="color: green"></i> Employee</a>
+                <a class="nav-link" href=""><i class="fa fa-folder-open" style="color: green"></i> Employees</a>
             </li>
         </ul>
     </nav>
@@ -55,49 +53,60 @@
                 <th>DELETE</th>
             </tr>
             </thead>
-            <tbody>
-            <?php foreach ($emp as $row) {
-                echo '
-                            <tr>
-                                <th scope="row">' . $row->id . '</th>
-                                <td>' . $row->name . '</td>
-                                <td>' . $row->gender . '</td>
-                                <td>' . $row->relationship . '</td>
-                                <td>' . $row->address . '</td>';
+            <tbody id="userData">
 
-                if ($row->html == 1) {
-                    echo '<td>&emsp;&#10003;</td>';
-                } else {
-                    echo '<td>&emsp;&#10007;</td>';
-                }
+            <?php if(!empty($emp)): foreach($emp as $post): ?>
+                <tr>
+                    <td><?php echo $post['id']; ?></td>
+                    <td><?php echo $post['name']; ?></td>
+                    <td><?php echo $post['gender']; ?></td>
+                    <td><?php echo $post['relationship']; ?></td>
+                    <td><?php echo $post['address']; ?></td>
+                    <td><?php if($post['html'] == 1){
+                        echo '&emsp;&#10003;';
+                        } else{
+                        echo '&emsp;&#10007;';
+                        } ?></td>
 
-                if ($row->css == 1) {
-                    echo '<td>&emsp;&#10003;</td>';
-                } else {
-                    echo '<td>&#10007;</td>';
-                }
+                    <td><?php if($post['css'] == 1){
+                            echo '&emsp;&#10003;';
+                        } else{
+                            echo '&emsp;&#10007;';
+                        } ?></td>
 
-                if ($row->javascript == 1) {
-                    echo '<td>&emsp;&emsp;&#10003;</td>';
-                } else {
-                    echo '<td>&emsp;&emsp;&#10007;</td>';
-                }
-                if ($row->php == 1) {
-                    echo '<td>&#10003;</td>';
-                } else {
-                    echo '<td>&#10007;</td>';
-                }
+                    <td><?php if($post['javascript'] == 1){
+                            echo '&emsp;&#10003;';
+                        } else{
+                            echo '&emsp;&#10007;';
+                        } ?></td>
 
-                echo '<td>' . $row->phone . '</td>
+                    <td><?php if($post['php'] == 1){
+                            echo '&emsp;&#10003;';
+                        } else{
+                            echo '&emsp;&#10007;';
+                        } ?></td>
 
-                            <td><input type="button" class="btn btn-outline-success" id="' . $row->id . '" value="Edit" onclick="changeRow(this)"></td>
-                            <td><input type="button" class="btn btn-outline-danger" id="' . $row->id . '" value="Delete" onclick="deleteRow(this)"></td>';
-            } ?>
+                    <td><?php echo $post['phone']; ?></td>
+
+                    <td><input type="button" class="btn btn-outline-success" id="' . <?php $post['id'] ?>. '" value="Edit" onclick="changeRow(this)"></td>
+                    <td><input type="button" class="btn btn-outline-danger" id="' . <?php $post['id'] ?> . '" value="Delete" onclick="deleteRow(this)"></td>
+
+
+                </tr>
+            <?php endforeach; else: ?>
+                <tr><td colspan="3">Post(s) not found......</td></tr>
+            <?php endif; ?>
 
             </tbody>
         </table>
-    </div>
 
+    </div>
+    <div>
+        <!--render pagination links-->
+        <ul class="pagination pu">
+            <?php echo $this->pagination->create_links(); ?>
+        </ul>
+    </div>
 </div>
 
 <div style="display: none;">

@@ -7,7 +7,12 @@ class CompanyController extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+        //Load pagination library
+        $this->load->library('pagination');
+        //Load company model
         $this->load->model('CompanyModel');
+        //per page limit
+        $this->perPage = 4;
     }
 
     /*insert controller function*/
@@ -52,8 +57,8 @@ class CompanyController extends CI_Controller
         $this->load->view('Register');
     }
 
-    /*List view controller function */
-    public function EmployeeList()
+    /*List view controller function and delete */
+/*    public function EmployeeList()
     {
         if (isset($_POST['delete_id'])) {
             $this->CompanyModel->delete($_POST['delete_id']);
@@ -62,6 +67,53 @@ class CompanyController extends CI_Controller
         $data['emp'] = $this->CompanyModel->getEmployees();
 
         $this->load->view('EmployeeList', $data);
+    }*/
+
+    public function EmployeeList(){
+        $data =array();
+
+        //get rows count
+        $conditions['returnType'] = 'count';
+        $totalRec = $this->CompanyModel->getRows($conditions);
+
+        //pagination configuration
+        $config['base_url'] = base_url().'EmployeeList/';
+        $config['uri_segment'] = 3;
+        $config['total_rows'] = $totalRec;
+        $config['per_page'] = $this->perPage;
+
+        //styling
+        $config['num_tag_open'] = '<li>';
+        $config['num_tag_close'] = '</li>';
+        $config['cur_tag_open'] = '<li class="active"><a href="javascript:void(0);">';
+        $config['cur_tag_close'] = '</a></li>';
+        $config['next_link'] = 'Next';
+        $config['prev_link'] = 'Prev';
+        $config['next_tag_open'] = '<li class="pg-next">';
+        $config['next_tag_close'] = '</li>';
+        $config['prev_tag_open'] = '<li class="pg-prev">';
+        $config['prev_tag_close'] = '</li>';
+        $config['first_tag_open'] = '<li>';
+        $config['first_tag_close'] = '</li>';
+        $config['last_tag_open'] = '<li>';
+        $config['last_tag_close'] = '</li>';
+
+        //initialize pagination library
+        $this->pagination->initialize($config);
+
+        //define offset
+        $page = $this->uri->segment(3);
+        $offset = !$page?0:$page;
+
+        //get rows
+        $conditions['returnType'] = '';
+        $conditions['start'] = $offset;
+        $conditions['limit'] = $this->perPage;
+        $data['emp'] = $this->CompanyModel->getRows($conditions);
+
+        //Load the list page view
+        $this->load->view('EmployeeList', $data);
+
     }
 
     /*Edit controller function */
