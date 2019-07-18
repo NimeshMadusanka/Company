@@ -29,7 +29,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="EmployeeList"><i class="fa fa-folder-open" style="color: green"></i> Employee</a>
+                <a class="nav-link" href="employee-list"><i class="fa fa-folder-open" style="color: green"></i> Employee</a>
             </li>
         </ul>
     </nav>

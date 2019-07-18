@@ -70,6 +70,7 @@ class CompanyController extends CI_Controller
     }*/
 
     public function EmployeeList(){
+
         $data =array();
 
         //get rows count
@@ -77,7 +78,7 @@ class CompanyController extends CI_Controller
         $totalRec = $this->CompanyModel->getRows($conditions);
 
         //pagination configuration
-        $config['base_url'] = base_url().'EmployeeList/';
+        $config['base_url'] = base_url().'CompanyController/EmployeeList';
         $config['uri_segment'] = 3;
         $config['total_rows'] = $totalRec;
         $config['per_page'] = $this->perPage;
@@ -111,8 +112,20 @@ class CompanyController extends CI_Controller
         $conditions['limit'] = $this->perPage;
         $data['emp'] = $this->CompanyModel->getRows($conditions);
 
-        //Load the list page view
+
         $this->load->view('EmployeeList', $data);
+       /* redirect('CompanyController/EmployeeList');*/
+
+
+    }
+
+    public function delete_employee(){
+        if (isset($_POST['delete_id'])) {
+            $this->CompanyModel->delete($_POST['delete_id']);
+
+        }
+
+        redirect('EmployeeList');
 
     }
 
@@ -120,50 +133,53 @@ class CompanyController extends CI_Controller
     public function edit_empoyee()
     {
 
-        if (isset($_POST['change_id']) || isset($_POST['id'])) {
+        if (isset($_GET['change_id'])) {
 
-            if (isset($_POST['id'])) {
-
-                $id = $_POST['id'];
-                $name = $_POST['name'];
-                $gender = $_POST['gender'];
-                $relationship = $_POST['relationship'];
-                $address = $_POST['address'];
-                $phone = $_POST['phone'];
-
-                if (isset($_POST['html'])) {
-                    $html = 1;
-                } else {
-                    $html = 0;
-                }
-
-                if (isset($_POST['css'])) {
-                    $css = 1;
-                } else {
-                    $css = 0;
-                }
-
-                if (isset($_POST['javascript'])) {
-                    $javascript = 1;
-                } else {
-                    $javascript = 0;
-                }
-
-                if (isset($_POST['php'])) {
-                    $php = 1;
-                } else {
-                    $php = 0;
-                }
-
-                $this->CompanyModel->edit_emp($id, $name, $gender, $relationship, $address, $html, $css, $javascript, $php, $phone);
-
-                redirect('CompanyController/EmployeeList');
-
-            }
-
-            $data['emp'] = $this->CompanyModel->getData($_POST['change_id']);
+            $data['emp'] = $this->CompanyModel->getData($_GET['change_id']);
 
             $this->load->view('EditEmployee', $data);
+        }
+    }
+
+    public function savedata(){
+
+        if (isset($_POST['id'])) {
+
+            $id = $_POST['id'];
+            $name = $_POST['name'];
+            $gender = $_POST['gender'];
+            $relationship = $_POST['relationship'];
+            $address = $_POST['address'];
+            $phone = $_POST['phone'];
+
+            if (isset($_POST['html'])) {
+                $html = 1;
+            } else {
+                $html = 0;
+            }
+
+            if (isset($_POST['css'])) {
+                $css = 1;
+            } else {
+                $css = 0;
+            }
+
+            if (isset($_POST['javascript'])) {
+                $javascript = 1;
+            } else {
+                $javascript = 0;
+            }
+
+            if (isset($_POST['php'])) {
+                $php = 1;
+            } else {
+                $php = 0;
+            }
+
+            $this->CompanyModel->edit_emp($id, $name, $gender, $relationship, $address, $html, $css, $javascript, $php, $phone);
+
+            redirect('EmployeeList');
+
         }
     }
 }

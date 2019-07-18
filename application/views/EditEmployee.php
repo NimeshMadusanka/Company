@@ -17,7 +17,7 @@
 
         <h4 style="color: #00CC00; margin-left: 30%">EMPLOYEE REGISTER FORM</h4>
 
-        <form style="margin: 20%; margin-top: 1% " action="edit_empoyee" method="post" class="was-validated" onsubmit="return checkForm()" >
+        <form style="margin: 20%; margin-top: 1% " action="save-employee" method="post" class="was-validated" onsubmit="return checkForm()" >
             <div class="form-group">
                 <label for="id">ID :</label>
                 <input type="text" class="form-control" name="id" value="<?php foreach ($emp as $row){ echo $row->id;} ?>" readonly>

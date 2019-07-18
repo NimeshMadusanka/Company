@@ -24,7 +24,7 @@
         <!-- Navigation Links -->
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="Register">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<i
+                <a class="nav-link" href="<?php echo base_url(); ?>register">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<i
                             class="fa fa-sign-in" style="color: green"></i> Register</a>
             </li>
 
@@ -55,47 +55,47 @@
             </thead>
             <tbody id="userData">
 
-            <?php if(!empty($emp)): foreach($emp as $post): ?>
+            <?php foreach($emp as $post){
+
+            echo'
                 <tr>
-                    <td><?php echo $post['id']; ?></td>
-                    <td><?php echo $post['name']; ?></td>
-                    <td><?php echo $post['gender']; ?></td>
-                    <td><?php echo $post['relationship']; ?></td>
-                    <td><?php echo $post['address']; ?></td>
-                    <td><?php if($post['html'] == 1){
+                    <td>'.$post['id'].'</td>
+                    <td>'.$post['name'].'</td>
+                    <td>'.$post['gender'].'</td>
+                    <td>'.$post['relationship'].'</td>
+                    <td>'.$post['address'].'</td>
+                    <td>'; if($post['html'] == 1){
                         echo '&emsp;&#10003;';
                         } else{
                         echo '&emsp;&#10007;';
-                        } ?></td>
+                        }echo '</td>
 
-                    <td><?php if($post['css'] == 1){
+                    <td>'; if($post['css'] == 1){
                             echo '&emsp;&#10003;';
                         } else{
                             echo '&emsp;&#10007;';
-                        } ?></td>
+                        }echo '</td>
 
-                    <td><?php if($post['javascript'] == 1){
+                    <td>'; if($post['javascript'] == 1){
+                            echo '&emsp;&emsp;&emsp;&#10003;';
+                        } else{
+                            echo '&emsp;&emsp;&emsp;&#10007;';
+                        }echo '</td>
+
+                    <td>'; if($post['php'] == 1){
                             echo '&emsp;&#10003;';
                         } else{
                             echo '&emsp;&#10007;';
-                        } ?></td>
+                        }echo '</td>
 
-                    <td><?php if($post['php'] == 1){
-                            echo '&emsp;&#10003;';
-                        } else{
-                            echo '&emsp;&#10007;';
-                        } ?></td>
+                    <td>'.$post['phone'].'</td>
 
-                    <td><?php echo $post['phone']; ?></td>
-
-                    <td><input type="button" class="btn btn-outline-success" id="' . <?php $post['id'] ?>. '" value="Edit" onclick="changeRow(this)"></td>
-                    <td><input type="button" class="btn btn-outline-danger" id="' . <?php $post['id'] ?> . '" value="Delete" onclick="deleteRow(this)"></td>
+                    <td><input type="button" class="btn btn-outline-success" id="'.$post['id'].'" value="Edit" onclick="changeRow(this)"></td>
+                    <td><input type="button" class="btn btn-outline-danger" id="'.$post['id'].'" value="Delete" onclick="deleteRow(this)"></td>
 
 
                 </tr>
-            <?php endforeach; else: ?>
-                <tr><td colspan="3">Post(s) not found......</td></tr>
-            <?php endif; ?>
+            ';}?>
 
             </tbody>
         </table>
@@ -103,20 +103,20 @@
     </div>
     <div>
         <!--render pagination links-->
-        <ul class="pagination pu">
+        <ul class="pagination ">
             <?php echo $this->pagination->create_links(); ?>
         </ul>
     </div>
 </div>
 
 <div style="display: none;">
-    <form action="edit_empoyee" method="post" id="change_form">
+    <form action="<?php echo base_url('edit-employee');?>" method="GET" id="change_form">
         <input type="text" name="change_id" id="change_id">
     </form>
 </div>
 
 <div style="display: none;">
-    <form action="EmployeeList" method="post" id="delete_form">
+    <form action="<?php echo base_url('delete-employee');?>" method="post" id="delete_form">
         <input type="text" name="delete_id" id="delete_id">
     </form>
 </div>
@@ -171,14 +171,7 @@
             <?php $this->session->set_flashdata("success", null); ?>
         }
 
-        var y = "<?php if (isset($_SESSION['error'])) {
-            echo $_SESSION['error'];
-        }?>";
 
-        if ("1" == y) {
-            showErrorMsg("This NIC Number Already Exists !");
-            <?php $this->session->set_flashdata("error", null); ?>
-        }
     }
 
 </script>

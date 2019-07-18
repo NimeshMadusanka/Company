@@ -28,7 +28,7 @@ class CompanyModel extends CI_Model
     }
 
     /* function of get Employee data*/
-/*    public function getEmployees()
+    public function getEmployees()
     {
 
         $this->db->select('*');
@@ -37,7 +37,8 @@ class CompanyModel extends CI_Model
 
         return $query->result();
 
-    }*/
+    }
+
     public function getRows($params = array()){
 
         $this->db->select('*');
@@ -49,21 +50,24 @@ class CompanyModel extends CI_Model
             $result = $query->row_array();
         }else{
             //set start and limit
-            if(array_key_exists("start",$params) && array_key_exists("limit",$params)){
-                $this->db->limit($params['limit'],$params['start']);
-            }elseif(!array_key_exists("start",$params) && array_key_exists("limit",$params)){
-                $this->db->limit($params['limit']);
-            }
+            if(array_key_exists("start", $params) && array_key_exists("limit", $params)){
 
-            if(array_key_exists("returnType",$params) && $params['returnType'] == 'count'){
+                $this->db->limit($params['limit'],$params['start']);
+
+            }elseif (!array_key_exists("start", $params) && array_key_exists("limit", $params)){
+
+                $this->db->limit($params['limit']);
+
+            }
+            if (array_key_exists("returnType", $params) && $params['returnType'] == 'count'){
+
                 $result = $this->db->count_all_results();
             }else{
+
                 $query = $this->db->get();
-                $result = ($query->num_rows() > 0)?$query->result_array():FALSE;
+                $result =($query->num_rows() > 0)?$query->result_array():FALSE;
             }
         }
-
-        //return fetched data
         return $result;
     }
 
@@ -118,3 +122,4 @@ class CompanyModel extends CI_Model
 
     }
 }
+
