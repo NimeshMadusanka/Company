@@ -4,7 +4,7 @@ class CompanyModel extends CI_Model
 {
 
     /*employee data insert function */
-    public function register_employee($name, $gender, $relationship, $address, $html, $css, $javascript, $php, $phone)
+    public function register_employee($name, $gender, $relationship, $address, $html, $css, $javascript, $php, $phone, $filename)
     {
 
         $data = array(
@@ -17,7 +17,8 @@ class CompanyModel extends CI_Model
             'css' => $css,
             'javascript' => $javascript,
             'php' => $php,
-            'phone' => $phone
+            'phone' => $phone,
+            'image' => $filename,
 
         );
 

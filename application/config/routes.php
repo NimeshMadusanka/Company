@@ -55,11 +55,14 @@ $route['translate_uri_dashes'] = FALSE;
 
 
 $route['register']['GET'] = 'CompanyController/Register';
+$route['register']['POST'] = 'CompanyController/Register';
+
 $route['employee-list']['GET'] = 'CompanyController/EmployeeList';
 $route['edit-employee']['GET'] = 'CompanyController/edit_empoyee';
 
 $route['save-employee']['POST'] = 'CompanyController/savedata';
 $route['delete-employee']['POST'] = 'CompanyController/delete_employee';
+
 
 $route['employeeList'] = 'CompanyController/EmployeeList';
 $route['employee-list/(:num)']['GET'] = 'CompanyController/EmployeeList/$1';

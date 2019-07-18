@@ -50,7 +50,13 @@ class CompanyController extends CI_Controller
             } else {
                 $php = 0;
             }
-            $this->CompanyModel->register_employee($name, $gender, $relationship, $address, $html, $css, $javascript, $php, $phone);
+
+            $file = $_FILES['upload_image'];
+            $ext = pathinfo($file['name']);
+            $filename = 'image/'  . time() . '.' . $ext['extension'];
+            move_uploaded_file($file['tmp_name'], $filename);
+
+            $this->CompanyModel->register_employee($name, $gender, $relationship, $address, $html, $css, $javascript, $php, $phone,$filename);
 
         }
 

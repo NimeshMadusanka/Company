@@ -39,7 +39,7 @@
 
         <h4 style="color: #00CC00; margin-left: 30%">EMPLOYEE REGISTER FORM</h4>
 
-        <form style="margin: 20%; margin-top: 1%" action="register" method="post" class="was-validated"
+        <form style="margin: 20%; margin-top: 1%" action="register" method="post" enctype="multipart/form-data" class="was-validated"
               onsubmit="return checkForm()">
             <div class="form-group">
                 <label for="name">Employee Name :</label>
@@ -92,6 +92,19 @@
                 <div class="valid-feedback">Valid.</div>
                 <div class="invalid-feedback">Please fill out this field.</div>
             </div>
+
+            <input type="file" name="upload_image" id="upload_image" onchange="setFileName()" accept=".png, .jpg, .jpeg">
+<!--            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                </div>
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="upload_image"
+                           aria-describedby="inputGroupFileAddon01" accept=".png, .jpg, .jpeg">
+                    <label class="custom-file-label" for="inputGroupFile01">Choose an Image</label>
+                </div>
+            </div>
+            <br/>-->
             <input style="margin-left: 35%; box-shadow: 0 0.4629629629629629vh 0.5208333333333334vw 0 rgba(0,0,0,0.3);"
                    type="submit" class="btn btn-success">
     </div>
@@ -111,5 +124,12 @@
             <?php $this->session->set_flashdata("success", null); ?>
         }
 
+    }
+</script>
+<script>
+    function setFileName() {
+        var fileInput = document.getElementById('upload_File');
+        var filename = fileInput.files[0].name;
+        document.getElementById("file_name").innerHTML = filename;
     }
 </script>
