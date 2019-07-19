@@ -93,18 +93,36 @@
                 <div class="invalid-feedback">Please fill out this field.</div>
             </div>
 
-            <input type="file" name="upload_image" id="upload_image" onchange="setFileName()" accept=".png, .jpg, .jpeg">
-<!--            <div class="input-group">
+            <!--<input type="file" name="upload_image" id="upload_image"  accept=".png, .jpg, .jpeg">-->
+            <div class="input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
                 </div>
                 <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="upload_image"
-                           aria-describedby="inputGroupFileAddon01" accept=".png, .jpg, .jpeg">
+                    <input type="file" class="custom-file-input" id="upload_image" name="upload_image" id="upload_image"  accept=".png, .jpg, .jpeg"
+                           aria-describedby="inputGroupFileAddon01" >
                     <label class="custom-file-label" for="inputGroupFile01">Choose an Image</label>
                 </div>
             </div>
-            <br/>-->
+            <br/>
+            <div class="form-group">
+                <label for="email">Email :</label>
+                <input type="email" class="form-control" name="email"  required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <div class="form-group">
+                <label for="name">Password :</label>
+                <input type="password" class="form-control" name="password" id="password" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Enter at Least Eight Characters[(0-9),(a-z),(A-Z)] </div>
+            </div>
+            <div class="form-group">
+                <label for="name">Confirm Password :</label>
+                <input type="password" class="form-control" name="confrim-password" id="confrim-password" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please re-enter the password.</div>
+            </div>
             <input style="margin-left: 35%; box-shadow: 0 0.4629629629629629vh 0.5208333333333334vw 0 rgba(0,0,0,0.3);"
                    type="submit" class="btn btn-success">
     </div>
@@ -126,10 +144,4 @@
 
     }
 </script>
-<script>
-    function setFileName() {
-        var fileInput = document.getElementById('upload_File');
-        var filename = fileInput.files[0].name;
-        document.getElementById("file_name").innerHTML = filename;
-    }
-</script>
+

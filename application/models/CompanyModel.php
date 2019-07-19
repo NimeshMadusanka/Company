@@ -4,7 +4,7 @@ class CompanyModel extends CI_Model
 {
 
     /*employee data insert function */
-    public function register_employee($name, $gender, $relationship, $address, $html, $css, $javascript, $php, $phone, $filename)
+    public function register_employee($name, $gender, $relationship, $address, $html, $css, $javascript, $php, $phone, $filename ,$email, $password)
     {
 
         $data = array(
@@ -19,6 +19,8 @@ class CompanyModel extends CI_Model
             'php' => $php,
             'phone' => $phone,
             'image' => $filename,
+            'email' => $email,
+            'password' => $password
 
         );
 
@@ -97,7 +99,7 @@ class CompanyModel extends CI_Model
     }
 
     /*edit function */
-    public function edit_emp($id, $name, $gender, $relationship, $address, $html, $css, $javascript, $php, $phone)
+    public function edit_emp($id, $name, $gender, $relationship, $address, $html, $css, $javascript, $php, $phone, $filename)
     {
 
         $data = array(
@@ -111,7 +113,8 @@ class CompanyModel extends CI_Model
             'css' => $css,
             'javascript' => $javascript,
             'php' => $php,
-            'phone' => $phone
+            'phone' => $phone,
+            'image' => $filename
 
         );
 

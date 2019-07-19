@@ -49,6 +49,7 @@
                 <th>JAVASCRIPT</th>
                 <th>PHP</th>
                 <th>Phone</th>
+                <th>Image</th>
                 <th>EDIT</th>
                 <th>DELETE</th>
             </tr>
@@ -89,6 +90,7 @@
                         }echo '</td>
 
                     <td>'.$post['phone'].'</td>
+                    <td><img src="'.base_url().$post['image'].'" style="width:50px; height:50px "></td>
 
                     <td><input type="button" class="btn btn-outline-success" id="'.$post['id'].'" value="Edit" onclick="changeRow(this)"></td>
                     <td><input type="button" class="btn btn-outline-danger" id="'.$post['id'].'" value="Delete" onclick="deleteRow(this)"></td>

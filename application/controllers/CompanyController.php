@@ -56,7 +56,10 @@ class CompanyController extends CI_Controller
             $filename = 'image/'  . time() . '.' . $ext['extension'];
             move_uploaded_file($file['tmp_name'], $filename);
 
-            $this->CompanyModel->register_employee($name, $gender, $relationship, $address, $html, $css, $javascript, $php, $phone,$filename);
+            $email = $_POST['email'];
+            $password = $_POST['password'];
+
+            $this->CompanyModel->register_employee($name, $gender, $relationship, $address, $html, $css, $javascript, $php, $phone,$filename, $email ,$password);
 
         }
 
@@ -182,9 +185,14 @@ class CompanyController extends CI_Controller
                 $php = 0;
             }
 
-            $this->CompanyModel->edit_emp($id, $name, $gender, $relationship, $address, $html, $css, $javascript, $php, $phone);
+            $file = $_FILES['upload_image'];
+            $ext = pathinfo($file['name']);
+            $filename = 'image/'  . time() . '.' . $ext['extension'];
+            move_uploaded_file($file['tmp_name'], $filename);
 
-            redirect('EmployeeList');
+            $this->CompanyModel->edit_emp($id, $name, $gender, $relationship, $address, $html, $css, $javascript, $php, $phone,$filename);
+
+            redirect('employee-list');
 
         }
     }

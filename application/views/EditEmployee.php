@@ -17,7 +17,7 @@
 
         <h4 style="color: #00CC00; margin-left: 30%">EMPLOYEE REGISTER FORM</h4>
 
-        <form style="margin: 20%; margin-top: 1% " action="save-employee" method="post" class="was-validated" onsubmit="return checkForm()" >
+        <form style="margin: 20%; margin-top: 1% " action="save-employee" method="post" enctype="multipart/form-data" class="was-validated" onsubmit="return checkForm()" >
             <div class="form-group">
                 <label for="id">ID :</label>
                 <input type="text" class="form-control" name="id" value="<?php foreach ($emp as $row){ echo $row->id;} ?>" readonly>
@@ -74,6 +74,19 @@
                 <div class="valid-feedback">Valid.</div>
                 <div class="invalid-feedback">Please fill out this field.</div>
             </div>
+
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                </div>
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="upload_image" name="upload_image" id="upload_image"  accept=".png, .jpg, .jpeg"
+                           aria-describedby="inputGroupFileAddon01" >
+                    <label class="custom-file-label" for="inputGroupFile01">Choose an Image</label>
+                </div>
+            </div>
+            <br/>
+
             <input style="margin-left: 35%" type="submit" value="Edit Details" class="btn btn-success">
     </div>
 

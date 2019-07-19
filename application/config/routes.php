@@ -64,5 +64,5 @@ $route['save-employee']['POST'] = 'CompanyController/savedata';
 $route['delete-employee']['POST'] = 'CompanyController/delete_employee';
 
 
-$route['employeeList'] = 'CompanyController/EmployeeList';
+$route['employee-list'] = 'CompanyController/EmployeeList';
 $route['employee-list/(:num)']['GET'] = 'CompanyController/EmployeeList/$1';
