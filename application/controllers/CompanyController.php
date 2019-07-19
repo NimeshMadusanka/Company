@@ -15,6 +15,7 @@ class CompanyController extends CI_Controller
         $this->perPage = 4;
     }
 
+
     /*insert controller function*/
     public function Register()
     {
@@ -80,51 +81,57 @@ class CompanyController extends CI_Controller
 
     public function EmployeeList(){
 
-        $data =array();
+        if (isset($_SESSION['user_logged'])&&isset($_SESSION['user_email'])){
 
-        //get rows count
-        $conditions['returnType'] = 'count';
-        $totalRec = $this->CompanyModel->getRows($conditions);
+            $data =array();
 
-        //pagination configuration
-        $config['base_url'] = base_url().'CompanyController/EmployeeList';
-        $config['uri_segment'] = 3;
-        $config['total_rows'] = $totalRec;
-        $config['per_page'] = $this->perPage;
+            //get rows count
+            $conditions['returnType'] = 'count';
+            $totalRec = $this->CompanyModel->getRows($conditions);
 
-        //styling
-        $config['num_tag_open'] = '<li>';
-        $config['num_tag_close'] = '</li>';
-        $config['cur_tag_open'] = '<li class="active"><a href="javascript:void(0);">';
-        $config['cur_tag_close'] = '</a></li>';
-        $config['next_link'] = 'Next';
-        $config['prev_link'] = 'Prev';
-        $config['next_tag_open'] = '<li class="pg-next">';
-        $config['next_tag_close'] = '</li>';
-        $config['prev_tag_open'] = '<li class="pg-prev">';
-        $config['prev_tag_close'] = '</li>';
-        $config['first_tag_open'] = '<li>';
-        $config['first_tag_close'] = '</li>';
-        $config['last_tag_open'] = '<li>';
-        $config['last_tag_close'] = '</li>';
+            //pagination configuration
+            $config['base_url'] = base_url().'CompanyController/EmployeeList';
+            $config['uri_segment'] = 3;
+            $config['total_rows'] = $totalRec;
+            $config['per_page'] = $this->perPage;
 
-        //initialize pagination library
-        $this->pagination->initialize($config);
+            //styling
+            $config['num_tag_open'] = '<li>';
+            $config['num_tag_close'] = '</li>';
+            $config['cur_tag_open'] = '<li class="active"><a href="javascript:void(0);">';
+            $config['cur_tag_close'] = '</a></li>';
+            $config['next_link'] = 'Next';
+            $config['prev_link'] = 'Prev';
+            $config['next_tag_open'] = '<li class="pg-next">';
+            $config['next_tag_close'] = '</li>';
+            $config['prev_tag_open'] = '<li class="pg-prev">';
+            $config['prev_tag_close'] = '</li>';
+            $config['first_tag_open'] = '<li>';
+            $config['first_tag_close'] = '</li>';
+            $config['last_tag_open'] = '<li>';
+            $config['last_tag_close'] = '</li>';
 
-        //define offset
-        $page = $this->uri->segment(3);
-        $offset = !$page?0:$page;
+            //initialize pagination library
+            $this->pagination->initialize($config);
 
-        //get rows
-        $conditions['returnType'] = '';
-        $conditions['start'] = $offset;
-        $conditions['limit'] = $this->perPage;
-        $data['emp'] = $this->CompanyModel->getRows($conditions);
+            //define offset
+            $page = $this->uri->segment(3);
+            $offset = !$page?0:$page;
+
+            //get rows
+            $conditions['returnType'] = '';
+            $conditions['start'] = $offset;
+            $conditions['limit'] = $this->perPage;
+            $data['emp'] = $this->CompanyModel->getRows($conditions);
 
 
-        $this->load->view('EmployeeList', $data);
-       /* redirect('CompanyController/EmployeeList');*/
+            $this->load->view('EmployeeList', $data);
+            /* redirect('CompanyController/EmployeeList');*/
 
+
+        }else{
+            redirect('login');
+        }
 
     }
 
@@ -195,5 +202,36 @@ class CompanyController extends CI_Controller
             redirect('employee-list');
 
         }
+    }
+
+    public function login(){
+
+        $this->load->view('login');
+    }
+
+    public function check_login(){
+        if (isset($_POST['email'])&&isset($_POST['password'])){
+
+            $email = $_POST['email'];
+            $pass = $_POST['password'];
+
+            $error = $this->CompanyModel->user_login($email,$pass);
+
+            if ($error==1||$error==2){
+                $this->session->set_flashdata("error", $error);
+                redirect('login');
+            }
+
+        }else{
+            redirect('login');
+        }
+    }
+    public function logout(){
+        // remove all session variables
+        session_unset();
+
+        // destroy the session
+        session_destroy();
+        redirect('login');
     }
 }

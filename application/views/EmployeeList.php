@@ -31,6 +31,9 @@
             <li class="nav-item">
                 <a class="nav-link" href=""><i class="fa fa-folder-open" style="color: green"></i> Employees</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="logout"><i class="fa fa-folder-open" style="color: green"></i> Logout</a>
+            </li>
         </ul>
     </nav>
 

@@ -57,6 +57,10 @@ $route['translate_uri_dashes'] = FALSE;
 $route['register']['GET'] = 'CompanyController/Register';
 $route['register']['POST'] = 'CompanyController/Register';
 
+$route['login']['GET'] = 'CompanyController/login';
+$route['login-check']['POST'] = 'CompanyController/check_login';
+$route['logout']['GET'] = 'CompanyController/logout';
+
 $route['employee-list']['GET'] = 'CompanyController/EmployeeList';
 $route['edit-employee']['GET'] = 'CompanyController/edit_empoyee';
 

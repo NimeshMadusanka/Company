@@ -20,7 +20,7 @@ class CompanyModel extends CI_Model
             'phone' => $phone,
             'image' => $filename,
             'email' => $email,
-            'password' => $password
+            'password' => base64_encode($password)
 
         );
 
@@ -123,6 +123,37 @@ class CompanyModel extends CI_Model
         $this->db->update('employee');
 
         $this->session->set_flashdata("success", "1");
+
+    }
+
+    public function user_login($email,$pass){
+
+        $this->db->select('*');
+        $this->db->from('employee');
+        $this->db->where(array('email'=> $email));
+        $query = $this->db->get();
+
+        if($query->result()){
+
+            $this->db->select('*');
+            $this->db->from('employee');
+            $this->db->where(array('email'=> $email,'password'=> base64_encode($pass)));
+            $query1 = $this->db->get();
+
+            if($query1->result()){
+
+                $_SESSION['user_logged'] = TRUE;
+                $_SESSION['user_email']= $email;
+
+                redirect("employee-list");
+
+            }else{
+                return 2;
+            }
+
+        }else{
+            return 1;
+        }
 
     }
 }
