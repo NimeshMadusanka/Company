@@ -1,0 +1,724 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 10px;
+    font-family: "Roboto Cn", sans-serif;
+    overflow-x: hidden;
+}
+
+body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+}
+.headDiv{
+    top: 0;
+    left: 0;
+    position: absolute;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    opacity: 0.75;
+    filter:alpha(opacity=80);
+    z-index: 1;
+}
+.mainDiv{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 99;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+a{
+    text-decoration: none;
+    color: #eee;
+}
+
+.container1{
+    max-width: 120rem;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.menu-toggle1{
+    position: fixed;
+    top: 1.5rem;
+    right: 2.5rem;
+    color: #eeeeee;
+    font-size: 3rem;
+    cursor: pointer;
+    z-index: 1000;
+    display: none;
+}
+
+nav{
+    padding-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+}
+
+.brand{
+    font-size: 3rem;
+    font-weight: 300;
+    transform: translateX(-100rem);
+    animation: slideIn .5s forwards;
+}
+
+.brand span{
+    color: crimson;
+}
+
+nav ul{
+    display: flex;
+}
+
+nav ul li{
+    list-style: none;
+    transform: translateX(100rem);
+    animation: slideIn .5s forwards;
+}
+
+nav ul li:nth-child(1){
+    animation-delay: 0s;
+}
+
+nav ul li:nth-child(2){
+    animation-delay: .5s;
+}
+
+nav ul li:nth-child(3){
+    animation-delay: 1s;
+}
+
+nav ul li:nth-child(4){
+    animation-delay: 1.5s;
+}
+
+nav h1 a:hover{
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a{
+    padding: 1rem 0;
+    margin: 0 3rem;
+    position: relative;
+    letter-spacing: 2px;
+}
+
+nav ul li a:last-child{
+    margin-right: 0;
+}
+
+nav ul li a::before,
+nav ul li a::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: lightskyblue;
+    left: 0;
+    transform: scaleX(0);
+    transition: all .5s;
+}
+
+nav ul li a::before{
+    top: 0;
+    transform-origin: left;
+}
+
+nav ul li a::after{
+    bottom: 0;
+    transform-origin: right;
+}
+
+.overlay1{
+    background-color: rgba(0,0,0,.95);
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    transition: opacity 650ms;
+    transform: scale(0);
+    opacity: 0;
+    display: none;
+}
+
+nav ul li a:hover{
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a:focus{
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a:hover::before,
+nav ul li a:hover::after{
+    transform: scaleX(1);
+}
+
+@keyframes slideIn {
+    from{
+
+    }
+    to{
+        transform: translateX(0);
+    }
+}
+
+@media screen and (max-width: 700px){
+
+    .menu-toggle1{
+        display: block;
+    }
+
+    nav{
+        padding-top: 0;
+        display: none;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+    }
+
+    nav ul{
+        flex-direction: column;
+    }
+
+    nav ul li{
+        margin-top: 5rem;
+    }
+
+    nav ul li a{
+        margin: 0;
+        font-size: 2.5rem;
+    }
+
+    .brand{
+        font-size: 5rem;
+    }
+
+    .overlay1.menu-open,
+    nav.menu-open{
+        display: flex;
+        transform: scale(1);
+        opacity: 1;
+    }
+
+}
+
+
+.profileBox{
+
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 88%;
+    height: 82%;
+    box-sizing: border-box;
+    background: rgba(255,255,255,.6);
+    padding: 80px 40px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    min-width: 1000px;
+    z-index: 1;
+}
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #555;
+}
+::-webkit-scrollbar-corner{
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #555;
+}
+.profileBox::-webkit-scrollbar {
+    display: none;
+}
+
+.profileBox .userImage{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    top: 5%;
+    left: 45px;
+    z-index: 1;
+}
+
+.profileBox .updateImage{
+    width: 40px;
+    height: 40px;
+    top: 13%;
+    left: 115px;
+    position: absolute;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.profileLine{
+    border-left: 2px solid black;
+    height: 81.8%;
+    top: 30.5%;
+    left: 280px;
+    transform: translate(0,-20%);
+    position: fixed;
+    z-index: 99;
+}
+
+.profileBox .hiddenfile {
+    width: 0px;
+    height: 0px;
+    overflow: hidden;
+}
+
+.profileBox .userSettings{
+    position: absolute;
+    height: 100%;
+    top: 0%;
+    left: 205px;
+    width: calc(100% - 205px);
+    position: absolute;
+}
+.profileBox .userSettings input[type="number"],
+.profileBox .userSettings input[type="text"],
+.profileBox .userSettings input[type="password"]
+{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+}
+.profileBox .userSettings input[type="button"]{
+
+    border: none;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+    background: #1b89da;
+    cursor: pointer;
+    border-radius: 20px;
+
+
+}
+.profileBox .profile-links{
+    width: 220px;
+    top: 180px;
+    position: absolute;
+    max-width: 150px;
+    line-height: 2;
+}
+
+.profileBox .profile-links .line-rows a{
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    max-width: 150px;
+    cursor: pointer;
+}
+
+.profileBox .profile-links a:hover{
+    color: darkred;
+}
+
+.profileBox .user-setting .line-rows{
+    height: 50px;
+}
+
+.profileBox .user-setting{
+
+    top: 30px;
+    left: 0;
+    text-align: center;
+    position: absolute;
+    margin-left: 205px;
+    width: calc(100% - 205px);
+
+}
+
+.profileBox .user-setting .line-rows a{
+    color: black;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    max-width: calc(100% - 205px);
+    cursor: pointer;
+}
+
+.profileBox .user-setting .line-rows a:hover{
+    color: darkred;
+}
+
+.userSettings .changeSettings{
+    margin-top: 120px;
+    text-align: center;
+}
+
+.userSettings .changeSettings p{
+    margin: 0;
+    font-weight: bold;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+}
+.userSettings .changeSettings .changes-settings{
+    margin-left: 30%;
+    margin-top: 40px;
+    text-align: left;
+}
+
+.userSettings .changeSettings .changes-settings p{
+
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    color: #fff;
+
+}
+.userSettings .changeSettings .changes-settings input{
+    width: 400px;
+    margin-bottom: 20px;
+}
+.userSettings .changeSettings input[type="number"],
+.userSettings .changeSettings input[type="text"],
+.userSettings .changeSettings input[type="email"],
+.userSettings .changeSettings input[type="tel"],
+.userSettings .changeSettings input[type="password"]
+{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+}
+.userSettings .changeSettings input[type="checkbox"]
+{
+    margin-left: 80px;
+    margin-top: -16px;
+    position: absolute;
+}
+
+.userSettings .changeSettings select{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+    width: 190px;
+    margin-bottom: 20px;
+}
+
+.userSettings .changeSettings option{
+    color: black;
+}
+
+.userSettings .changeSettings .checkbox-Div p{
+    font-weight: bold;
+    color: #fff;
+    margin-left: 80px;
+}
+
+.userSettings .changeSettings input[type="submit"]{
+
+    border: none;
+    outline: none;
+    width: 200px;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+    background: #1b89da;
+    cursor: pointer;
+    border-radius: 20px;
+    margin-left: 13%;
+
+
+}
+.userSettings .changeSettings .changes-settings input[type="submit"]:hover{
+
+    background: #418ef4;
+    color: #262626;
+
+}
+.hiddenDiv{
+    display: none;
+}
+
+
+.mainDiv .profileBox .user-setting{
+    margin-top: 40px;
+    text-align: center;
+}
+
+.mainDiv .profileBox .user-setting p{
+
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    color: black;
+    text-align: left;
+    margin-left: calc(50% - 200px);
+
+}
+.mainDiv .profileBox .user-setting input{
+    width: 400px;
+    margin-bottom: 20px;
+}
+.mainDiv .profileBox .user-setting input[type="number"],
+.mainDiv .profileBox .user-setting input[type="text"],
+.mainDiv .profileBox .user-setting input[type="email"],
+.mainDiv .profileBox .user-setting input[type="tel"],
+.mainDiv .profileBox .user-setting input[type="password"],
+.mainDiv .profileBox .user-setting input[type="date"]
+{
+    border: none;
+    border-bottom: 1px solid black;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: black;
+    font-size: 16px;
+}
+
+.mainDiv .profileBox .user-setting textarea{
+    border: none;
+    border-bottom: 1px solid black;
+    background: transparent;
+    outline: none;
+    height: 80px;
+    color: black;
+    font-size: 16px;
+    width: 400px;
+}
+
+.mainDiv .profileBox .user-setting select{
+    border: none;
+    border-bottom: 1px solid black;
+    background: transparent;
+    outline: none !important;
+    height: 40px;
+    color: black;
+    font-size: 16px;
+    width: 400px;
+    margin-bottom: 20px;
+}
+.userSettings .changeSettings option{
+    color: black;
+}
+
+.mainDiv .profileBox .user-setting input[type="submit"]:hover{
+
+    background: #418ef4;
+    color: #262626;
+
+}
+
+.mainDiv .profileBox .user-setting input[type="button"]:hover{
+
+    background: #418ef4;
+    color: #262626;
+
+}
+
+.mainDiv .profileBox .user-setting input[type="submit"],
+.mainDiv .profileBox .user-setting input[type="button"]
+{
+
+    border: none;
+    outline: none;
+    width: 200px;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+    background: #1b89da;
+    cursor: pointer;
+    border-radius: 20px;
+
+
+}
+
+.profileBox .profile-links .line-rows .dot {
+    height: 22px;
+    width: 22px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
+    background-color: rgb(255, 0, 80,.7);
+    border-radius: 50%;
+    display: inline-block;
+}
+
+sub {
+    vertical-align: sub;
+    font-size: small;
+}
+
+.profileBox .user-setting .reservations .reservationTable{
+    border-collapse: collapse;
+    width: 700px;
+    margin-left: calc(50% - 350px);
+}
+
+.profileBox .user-setting .reservations th,td{
+    color: black;
+    align: "center";
+}
+
+.profileBox .user-setting .reservations .tableNew{
+    text-align: center;
+    border: 3px solid black;
+    height: 65px;
+}
+
+.homeBox{
+
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 88%;
+    height: 1200px;
+    box-sizing: border-box;
+    background: rgba(255,255,255,.6);
+    padding: 80px 40px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    min-width: 1000px;
+    z-index: 1;
+}
+
+.homeBox::-webkit-scrollbar {
+    display: none;
+}
+
+.contact {
+    width: 900px;
+    height: 500px;
+    left: 0;
+    background-color: rgba(255, 255, 255,.8);
+    margin-top: 100px;
+    position: absolute;
+    margin-left: calc( 50% - 450px );
+}
+
+.contact .contact-text1{
+
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Pacifico' , cursive;
+    letter-spacing: 12px;
+    padding: 50px 0px;
+    color: black;
+}
+
+.contact .contact-line {
+
+    border-top: 2px solid black;
+    width: 850px;
+    margin-left: 25px;
+    margin-top: -3%;
+}
+
+.contact .contact-text2{
+
+    text-align: center;
+    font-size: 20px;
+    font-family: "Palatino Linotype",  Helvetica, sans-serif;
+    letter-spacing: 1px;
+    margin-top: 4%;
+    font-weight: bold;
+
+}
+
+.contact .contact-text3{
+
+    text-align: center;
+    font-size: 24px;
+    font-family: "Palatino Linotype",  Helvetica, sans-serif;
+    letter-spacing: 1px;
+    margin-top: 1%;
+    font-weight: bold;
+
+}
+
+.contact .contact-links{
+    text-align: center;
+    font-family: "Palatino Linotype",  Helvetica, sans-serif;
+    font-size: 24px;
+    margin-top: 5%;
+}
+
+.contact .contact-links a{
+    padding: 0 20px;
+    color: black;
+}
+
+.contact .contact-links a:hover{
+    text-decoration: none;
+}
+
+.contact .contact-social{
+    text-align: center;
+    font-family: "Palatino Linotype",  Helvetica, sans-serif;
+    font-size: 27px;
+    margin-top: 5%;
+}
+
+.contact .contact-social img{
+    width: 30px;
+}
+
+.contact .contact-social a{
+    padding: 0 10px;
+}
+
+.profileImage{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+

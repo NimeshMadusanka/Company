@@ -64,6 +64,13 @@ $route['logout']['GET'] = 'CompanyController/logout';
 $route['employee-list']['GET'] = 'CompanyController/EmployeeList';
 $route['edit-employee']['GET'] = 'CompanyController/edit_empoyee';
 
+$route['table_data']['GET'] = 'CompanyController/table_data';
+$route['table_data']['POST'] = 'CompanyController/table_data';
+
+$route['tablelist_data']['POST'] = 'CompanyController/tablelist_data';
+
+
+
 $route['save-employee']['POST'] = 'CompanyController/savedata';
 $route['delete-employee']['POST'] = 'CompanyController/delete_employee';
 

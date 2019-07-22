@@ -13,6 +13,8 @@ class CompanyController extends CI_Controller
         $this->load->model('CompanyModel');
         //per page limit
         $this->perPage = 4;
+
+        $this->load->library('ajax');
     }
 
 
@@ -67,17 +69,7 @@ class CompanyController extends CI_Controller
         $this->load->view('Register');
     }
 
-    /*List view controller function and delete */
-/*    public function EmployeeList()
-    {
-        if (isset($_POST['delete_id'])) {
-            $this->CompanyModel->delete($_POST['delete_id']);
-        }
 
-        $data['emp'] = $this->CompanyModel->getEmployees();
-
-        $this->load->view('EmployeeList', $data);
-    }*/
 
     public function EmployeeList(){
 
@@ -234,4 +226,29 @@ class CompanyController extends CI_Controller
         session_destroy();
         redirect('login');
     }
+
+/*    public function table_data(){
+
+        $this->load->view('table_data');
+    }*/
+
+    /*List view controller function and delete */
+        public function table_data()
+        {
+            if (isset($_POST['delete_id'])) {
+                $this->CompanyModel->delete($_POST['delete_id']);
+            }
+
+            $data['emp'] = $this->CompanyModel->getEmployees();
+
+            $this->load->view('table_data', $data);
+        }
+
+
+    public function tablelist_data(){
+
+        $data = $this->CompanyModel->get_datatable_data();
+        $this->ajax->send($data);
+    }
+
 }

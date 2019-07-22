@@ -1,0 +1,134 @@
+
+.homeSlider a {
+	color: #000;
+	text-decoration: none;
+}
+
+.homeSlider h1, h2, h5 {
+	margin: 20px 20px 30px 20px;
+	font-size: 56px;
+	color: #fff;
+	font-family: "Volkhov", serif;
+	text-align: center;
+	font-weight: 700;
+	text-shadow: 1px 1px 3px #2a3342;
+}
+
+.homeSlider h1 span, h5 {
+	font-size: 18px;
+	display: block;
+	font-style: italic;
+	color: #2a3342;
+	font-weight: 400;
+	text-shadow: 0px 1px 1px #fff;
+}
+
+.homeSlider .wrapper {
+	position: relative;
+	max-width: 840px;
+	width: 100%;
+	padding: 0 0px;
+	margin: 0 auto;
+}
+
+/* Header Style */
+.homeSlider .codrops-top {
+	line-height: 24px;
+	font-size: 11px;
+	background: #fff;
+	background: rgba(255, 255, 255, 0.8);
+	text-transform: uppercase;
+	z-index: 9999;
+	position: relative;
+	font-family: Cambria, Georgia, serif;
+	box-shadow: 1px 0px 2px rgba(0,0,0,0.2);
+}
+
+.homeSlider .codrops-top a {
+	padding: 0px 10px;
+	letter-spacing: 1px;
+	color: #333;
+	display: inline-block;
+}
+
+.homeSlider .codrops-top a:hover {
+	background: rgba(255,255,255,0.6);
+}
+
+.homeSlider .codrops-top span.right {
+	float: right;
+}
+
+.homeSlider .codrops-top span.right a {
+	float: left;
+	display: block;
+}
+
+/* More examples buttons */
+
+.homeSlider .more {
+	position: relative;
+	clear: both;
+	padding: 20px;
+}
+
+.homeSlider .more:before {
+	content: "";
+	position: absolute;
+	background-color: #2a3342;
+	box-shadow: 0 1px 0 rgba(255,255,255,0.8);
+	height: 1px;
+	width: 440px;
+	left: 50%;
+	margin-left: -220px;
+	top: -10px;
+}
+
+.homeSlider .more ul {
+	display: block;
+	height: 32px;
+	text-align: center;
+}
+
+.homeSlider .more ul li {
+	display: inline-block;
+	line-height: 24px;
+}
+
+.homeSlider .more ul li.selected a,
+.homeSlider .more ul li.selected a:hover {
+	background: #5f708c;
+	color: #fff;
+	text-shadow: none;
+}
+
+.homeSlider .more ul li a {
+	text-shadow: 1px 1px 1px #fff;
+	color: #555;
+	background: #fbf9f5;
+	padding: 2px 5px;
+	margin: 0 2px;
+	line-height: 18px;
+	display: inline-block;
+	box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.homeSlider .more ul li a:hover {
+	background: #5f708c;
+	color: #fff;
+	text-shadow: none;
+}
+
+.homeSlider p.info {
+	font-family: "Volkhov", serif;
+	font-style: italic;
+	color: #2a3342;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.9);
+	padding: 20px;
+	display: block;
+	clear: both;
+	text-align: center;
+	width: 100%;
+	max-wdith: 440px;
+	margin: 0 auto;
+}

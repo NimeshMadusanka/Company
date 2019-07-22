@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <script src="<?php echo base_url(); ?>/public/js/sweetalert.min.js"></script>
     <script src="<?php echo base_url(); ?>/public/js/validation.js"></script>
-
 </head>
 <body>
 
