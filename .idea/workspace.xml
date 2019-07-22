@@ -1,131 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d340b153-6eb4-4f40-86c1-7c75836e9841" name="Default Changelist" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/JosefinSans/JosefinSans-Bold.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/JosefinSans/JosefinSans-BoldItalic.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/JosefinSans/JosefinSans-Italic.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/JosefinSans/JosefinSans-Light.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/JosefinSans/JosefinSans-LightItalic.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/JosefinSans/JosefinSans-Regular.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/JosefinSans/JosefinSans-SemiBold.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/JosefinSans/JosefinSans-SemiBoldItalic.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/JosefinSans/JosefinSans-Thin.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/JosefinSans/JosefinSans-ThinItalic.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/font-awesome-4.7.0/fonts/FontAwesome.otf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/iconic/fonts/Material-Design-Iconic-Font.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/iconic/fonts/Material-Design-Iconic-Font.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/iconic/fonts/Material-Design-Iconic-Font.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/iconic/fonts/Material-Design-Iconic-Font.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/source-sans-pro/SourceSansPro-Black.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/source-sans-pro/SourceSansPro-BlackItalic.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/source-sans-pro/SourceSansPro-Bold.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/source-sans-pro/SourceSansPro-BoldItalic.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/source-sans-pro/SourceSansPro-ExtraLight.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/source-sans-pro/SourceSansPro-ExtraLightItalic.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/source-sans-pro/SourceSansPro-Italic.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/source-sans-pro/SourceSansPro-Light.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/source-sans-pro/SourceSansPro-LightItalic.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/source-sans-pro/SourceSansPro-Regular.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/source-sans-pro/SourceSansPro-SemiBold.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/source-sans-pro/SourceSansPro-SemiBoldItalic.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/ubuntu/Ubuntu-Bold.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/ubuntu/Ubuntu-BoldItalic.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/ubuntu/Ubuntu-Italic.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/ubuntu/Ubuntu-Light.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/ubuntu/Ubuntu-LightItalic.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/ubuntu/Ubuntu-Medium.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/ubuntu/Ubuntu-MediumItalic.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/ubuntu/Ubuntu-Regular.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/icons/favicon.ico" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/icons/map-marker.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/main.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/util.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/JosefinSans/OFL.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/font-awesome-4.7.0/HELP-US-OUT.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/font-awesome-4.7.0/css/font-awesome.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/font-awesome-4.7.0/css/font-awesome.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/font-awesome-4.7.0/less/animated.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/font-awesome-4.7.0/less/bordered-pulled.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/font-awesome-4.7.0/less/core.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/font-awesome-4.7.0/less/fixed-width.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/font-awesome-4.7.0/less/font-awesome.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/font-awesome-4.7.0/less/icons.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/font-awesome-4.7.0/less/larger.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/font-awesome-4.7.0/less/list.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/font-awesome-4.7.0/less/mixins.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/font-awesome-4.7.0/less/path.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/font-awesome-4.7.0/less/rotated-flipped.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/font-awesome-4.7.0/less/screen-reader.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/font-awesome-4.7.0/less/stacked.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/font-awesome-4.7.0/less/variables.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/font-awesome-4.7.0/scss/_animated.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/font-awesome-4.7.0/scss/_bordered-pulled.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/font-awesome-4.7.0/scss/_core.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/font-awesome-4.7.0/scss/_fixed-width.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/font-awesome-4.7.0/scss/_icons.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/font-awesome-4.7.0/scss/_larger.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/font-awesome-4.7.0/scss/_list.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/font-awesome-4.7.0/scss/_mixins.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/font-awesome-4.7.0/scss/_path.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/font-awesome-4.7.0/scss/_rotated-flipped.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/font-awesome-4.7.0/scss/_screen-reader.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/font-awesome-4.7.0/scss/_stacked.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/font-awesome-4.7.0/scss/_variables.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/font-awesome-4.7.0/scss/font-awesome.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/iconic/css/material-design-iconic-font.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/iconic/css/material-design-iconic-font.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/iconic/fonts/Material-Design-Iconic-Font.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/source-sans-pro/OFL.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/ubuntu/UFL.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/main.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/animate/animate.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/animsition/css/animsition.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/animsition/css/animsition.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/animsition/js/animsition.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/animsition/js/animsition.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/bootstrap/css/bootstrap-grid.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/bootstrap/css/bootstrap-grid.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/bootstrap/css/bootstrap-grid.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/bootstrap/css/bootstrap-grid.min.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/bootstrap/css/bootstrap-reboot.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/bootstrap/css/bootstrap-reboot.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/bootstrap/css/bootstrap-reboot.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/bootstrap/css/bootstrap-reboot.min.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/bootstrap/css/bootstrap.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/bootstrap/css/bootstrap.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/bootstrap/css/bootstrap.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/bootstrap/css/bootstrap.min.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/bootstrap/js/bootstrap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/bootstrap/js/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/bootstrap/js/popper.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/bootstrap/js/popper.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/bootstrap/js/tooltip.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/countdowntime/countdowntime.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/css-hamburgers/hamburgers.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/css-hamburgers/hamburgers.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/daterangepicker/daterangepicker.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/daterangepicker/daterangepicker.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/daterangepicker/moment.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/daterangepicker/moment.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/jquery/jquery-3.2.1.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/perfect-scrollbar/perfect-scrollbar.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/perfect-scrollbar/perfect-scrollbar.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/select2/select2.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/select2/select2.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/select2/select2.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendor/select2/select2.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/routes.php" afterPath="$PROJECT_DIR$/application/config/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/CompanyController.php" afterPath="$PROJECT_DIR$/application/controllers/CompanyController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/CompanyModel.php" afterPath="$PROJECT_DIR$/application/models/CompanyModel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/EmployeeList.php" afterPath="$PROJECT_DIR$/application/views/EmployeeList.php" />
-    </list>
+    <list default="true" id="d340b153-6eb4-4f40-86c1-7c75836e9841" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -522,7 +398,7 @@
       <workItem from="1563445099067" duration="6155000" />
       <workItem from="1563509445416" duration="1845000" />
       <workItem from="1563513725068" duration="7302000" />
-      <workItem from="1563523516698" duration="11944000" />
+      <workItem from="1563523516698" duration="12284000" />
     </task>
     <task id="LOCAL-00001" summary="register form and styling">
       <created>1562710830295</created>
@@ -591,10 +467,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="144957000" />
+    <option name="totallyTimeSpent" value="145297000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-91" y="66" width="1382" height="744" extended-state="1" />
+    <frame x="-91" y="66" width="1382" height="744" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17130308" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
